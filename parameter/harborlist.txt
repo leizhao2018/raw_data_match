@@ -1,0 +1,21 @@
+lat,lon,harbor
+4134.2,7037.2, office
+4138.04,7055.2, New Bedford Cuttyhunk
+4138.36,7055.22, New Bedford Fish Island
+4122.908,7130.66, PJ State
+4236.756,7039.124,  Gloucester State fish pier
+4236.528,7039.280,  Gloucester Marine Railways
+4248.79,7052.03, Newburyport MA
+4254.0,7049.2, Hampton NH
+4146.3,7016.4, Sandwich MA
+4129.37,7119.33, Newport RI
+4305.0,7044.74, Kittery ME
+4145.1,7009.21, Dennis MA
+4203.01,7010.88, Ptown Mcmillan Wharf
+4303.42,7043.62, Piscatcua Wentworth_by_the_Sea_Marina
+4339.072,7015.245, Portland near GMRI
+4148.0,7000.0,  Rock Harbor Orleans
+4305.74,7046.03, Portsmouth NH
+4140.151,7003.496, Harwich MA
+4312.7,7113.22, Cassies NH
+4340.0,7037.35, Rockport MA
