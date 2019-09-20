@@ -23,6 +23,7 @@ import time
 import requests
 
 def angle_conversion(a):
+    '''Angle converted to radians'''
     a = np.array(a)
     return a/180*np.pi
     
@@ -59,7 +60,7 @@ def ThreeD_dist(lat1=0,lon1=0,lat2=0,lon2=0,h1=0,h2=0):
     return distance
 
 def find_header_rows(path_name):
-    """the lens of header"""
+    """find the lens of header"""
     original_file=pd.read_csv(path_name,nrows=12,names=['0','1','2','3','4','5'])
     for i in range(len(original_file['0'])):
         if original_file['0'][i]=='HEADING':
@@ -165,12 +166,15 @@ def fuzzyfinder(user_input, collection):
     return [x for _, _, x in sorted(suggestions)] 
 
 def get_doppio_url(date):
+    '''input date, the format of date is str, for example: 2018-01-12
+    function: get the url of doppio'''
     url='http://tds.marine.rutgers.edu/thredds/dodsC/roms/doppio/2017_da/his/runs/History_RUN_2018-11-12T00:00:00Z'
     return url.replace('2018-11-12',date)
 
 
 def gmt_to_eastern(times_gmt):
-    """GMT time converted to US Eastern Time"""
+    """GMT time converted to US Eastern Time
+     the format of times_gmt is string"""
     eastern = pytz.timezone('US/Eastern')
     gmt = pytz.timezone('Etc/GMT')
     date = datetime.datetime.strptime(str(times_gmt),'%Y-%m-%d %H:%M:%S')
@@ -181,7 +185,7 @@ def gmt_to_eastern(times_gmt):
 
 def  isConnected(address="http://server.arcgisonline.com/ArcGIS"):
     
-    "check the internet"
+    "check the internet,return True if network is good, otherwise return False."
     try:
         html = requests.get(address,timeout=2)
     except:
@@ -189,7 +193,7 @@ def  isConnected(address="http://server.arcgisonline.com/ArcGIS"):
     return True
 
 def keep_number(value,integer_num,decimal_digits):
-    """keep the lens of value"""    
+    """keep the lens of value, for example: 123.123, integer_num=4, decimal_digits=4, return '0123.1230'"""    
     #ouput data type is str
     data=str(value)
     if len(data.split('.'))==2:
@@ -221,9 +225,9 @@ def keep_number(value,integer_num,decimal_digits):
        
 
 def list_all_files(rootdir):
-    """get all files' path and name in rootdirectory"""
+    """get all files' path and name under rootdirectory"""
     _files = []
-    list = os.listdir(rootdir) #列出文件夹下所有的目录与文件
+    list = os.listdir(rootdir) #List all the directories and files under the folder
     for i in range(0,len(list)):
            path = os.path.join(rootdir,list[i])
            if os.path.isdir(path):
@@ -259,6 +263,7 @@ def local2utc(local_st):
 
 
 def nrows_len_to(fle,long,name,**kwargs):
+    ''''''
     df=pd.read_csv(fle,names=['key','value1','value2','value3','value4','value5'])
     for i in range(len(df)):
         if len(df.iloc[i].dropna())!=long:
